@@ -1,5 +1,7 @@
 package ch03;
 
+//평균 수행 시간이 O(logN)인 알고리즘
+//힙 정렬
 public class HeapSort {
 
 	private int SIZE;

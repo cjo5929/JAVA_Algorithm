@@ -4,57 +4,55 @@ public class HeapSort {
 
 	private int SIZE;
 	private int heapArr[];
-	
-	public HeapSort()
-	{
+
+	public HeapSort() {
 		SIZE = 0;
-		heapArr = new int [50];
+		heapArr = new int[50];
 	}
-	
-	public void insertHeap(int input)
-	{
+
+	public void insertHeap(int input) {
 		int i = ++SIZE;
-		//while(( i != 1) && ( input > heapArr[i/2])){ //max heap
-		while(( i != 1) && ( input < heapArr[i/2])){ //min heap
-			heapArr[i] = heapArr[i/2];
-			i = i/2;
+		// while(( i != 1) && ( input > heapArr[i/2])){ //max heap
+		while ((i != 1) && (input < heapArr[i / 2])) { // min heap
+			heapArr[i] = heapArr[i / 2];
+			i = i / 2;
 		}
 		heapArr[i] = input;
 	}
-	
-	public int getHeapSize()
-	{
+
+	public int getHeapSize() {
 		return SIZE;
 	}
-	
-	public int deleteHeap()
-	{
+
+	public int deleteHeap() {
 		int parent, child;
 		int data, temp;
-		data = heapArr[1]; 
-		
-		temp = heapArr[SIZE]; 
-		SIZE -= 1; 
-		parent =1; child = 2;
-		
-		while(child <= SIZE){
-			//if((child < HEAP_SIZE) && (heapArr[child] < heapArr[child+1])){ //max heap
-			if((child < SIZE) && (heapArr[child] > heapArr[child+1])){ //min heap
+		data = heapArr[1];
+
+		temp = heapArr[SIZE];
+		SIZE -= 1;
+		parent = 1;
+		child = 2;
+
+		while (child <= SIZE) {
+			// if((child < HEAP_SIZE) && (heapArr[child] < heapArr[child+1])){ //max heap
+			if ((child < SIZE) && (heapArr[child] > heapArr[child + 1])) { // min heap
 				child++;
 			}
-			//if(temp >= heapArr[child]) break; //max heap
-			if(temp <= heapArr[child]) break;   //min heap
+			// if(temp >= heapArr[child]) break; //max heap
+			if (temp <= heapArr[child])
+				break; // min heap
 			heapArr[parent] = heapArr[child];
 			parent = child;
 			child *= 2;
 		}
-		
+
 		heapArr[parent] = temp;
 		return data;
 	}
-	
-	public void printHeap(){
-		//System.out.printf("\n Max Heap : ");
+
+	public void printHeap() {
+		// System.out.printf("\n Max Heap : ");
 		System.out.printf("\n Min Heap : ");
 		for(int i=1; i<=SIZE; i++)
 			System.out.printf("[%d] ", heapArr[i]);

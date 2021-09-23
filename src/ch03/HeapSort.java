@@ -54,7 +54,7 @@ public class HeapSort {
 	public void printHeap() {
 		// System.out.printf("\n Max Heap : ");
 		System.out.printf("\n Min Heap : ");
-		for(int i=1; i<=SIZE; i++)
+		for(int i=1; i<=SIZE; i++) 	
 			System.out.printf("[%d] ", heapArr[i]);
 	}
 	public static void main(String[] args) {

@@ -46,6 +46,7 @@ public class BfsSearch {
 		graph.addEdges(0, 1, 1);
 		graph.addEdges(0, 2, 1);
 		graph.addEdges(1, 3, 1);
+		
 		graph.addEdges(1, 4, 1);
 		graph.addEdges(2, 5, 1);
 		graph.addEdges(2, 6, 1);
